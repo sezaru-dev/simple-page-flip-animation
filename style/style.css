@@ -1,0 +1,284 @@
+/* imported font from google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+/* import new font from google fonts */
+
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body{
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   overflow: hidden;
+   /*  
+   change font for example:
+   font-family: "Arial",Verdana, Geneva, Tahoma, sans-serif;
+   */
+   font-family: "Roboto",Verdana, Geneva, Tahoma, sans-serif;
+   background-color: #2c2c2c;
+}
+
+input{
+   display: none;
+}
+
+img{
+   width: 100%;
+   height: 100%;
+}
+
+.book{
+   display: flex;
+}
+
+#cover{
+   width: 400px;
+   height: 400px;
+   opacity: 0;
+   z-index: -1;
+}
+
+.flip-book{
+   width: 400px;
+   height: 400px;
+   position: relative;
+   perspective: 1500px;
+}
+
+.flip{
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   left: 0;
+   transform-origin: left;
+   transform-style: preserve-3d;
+   transform: rotateY(0deg);
+   transition: all ease-in-out 2.5s;
+   color: rgb(37, 36, 36);
+}
+
+p{
+   font-size: 14px;
+   line-height: 24px;
+}
+
+.front{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: #fff;
+   /* padding: 0 13px; */
+   box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5) 0 2px 5px rgba(0, 0, 0, .5);
+}
+
+.back{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   z-index: 99;
+   transform: rotateY(180deg);
+   backface-visibility: hidden;
+   
+   background-color: #fff;
+
+   /* my code */
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.next-btn{
+   position: absolute;
+   bottom: 13px;
+   right: 13px;
+   cursor: pointer;
+   color: #000;
+}
+
+.back-btn{
+   position: absolute;
+   bottom: 13px;
+   right: 13px;
+   cursor: pointer;
+   color: #000;
+}
+
+
+#p1{
+   z-index: 500;
+}
+
+#p2{
+   z-index: 200;
+}
+
+#p3{
+   z-index: 100;
+}
+
+#p4{
+   z-index: 5;
+}
+
+#p5{
+   z-index: 4;
+}
+
+#p6{
+   z-index: 3;
+}
+
+#p7{
+   z-index: 2;
+}
+
+#p8{
+   z-index: 1;
+}
+
+#c1:checked ~ .flip-book #p1{
+   transform: rotateY(-180deg);
+   z-index: 1;
+}
+#c2:checked ~ .flip-book #p2{
+   transform: rotateY(-180deg);
+   z-index: 2;
+}
+#c3:checked ~ .flip-book #p3{
+   transform: rotateY(-180deg);
+   z-index: 3;
+}
+#c4:checked ~ .flip-book #p4{
+   transform: rotateY(-180deg);
+   z-index: 4;
+}
+#c5:checked ~ .flip-book #p5{
+   transform: rotateY(-180deg);
+   z-index: 5;
+}
+#c6:checked ~ .flip-book #p6{
+   transform: rotateY(-180deg);
+   z-index: 6;
+}
+#c7:checked ~ .flip-book #p7{
+   transform: rotateY(-180deg);
+   z-index: 10;
+}
+#c8:checked ~ .flip-book #p8{
+   transform: rotateY(-180deg);
+   z-index: 20;
+}
+
+
+
+p{
+   font-size: 1.4rem;
+   padding: 1rem;
+}
+
+#p1 h2{
+   padding: .8rem;
+   margin-left: 3rem;
+   background-color: rgb(252, 200, 205);
+   box-shadow: 0px 1px 1px rgb(108, 107, 179);
+   position: relative;
+}
+
+.mainpage-detail{
+   height: .8rem;
+   width: 3.5rem;
+   position: absolute;
+   top: -6px;
+   left: -8px;
+   background-color: rgb(108, 107, 179);
+}
+
+
+#p1 .front {
+   display: flex;
+   justify-content: end;
+   align-items:flex-end;
+   padding-bottom: 3rem;
+}
+
+#p8 .backpage{
+   padding: .8rem 1rem;
+   background-color: rgb(252, 200, 205);
+   box-shadow: 0px 1px 1px rgb(108, 107, 179);
+   position: relative;
+}
+
+.backpage{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+.backpage h2{
+   font-size: 2rem;
+   color: rgb(32, 31, 31);
+}
+.backpage p{
+   line-height:0.1;
+   font-size: 1.3rem;
+   color: rgb(68, 68, 68);
+}
+
+
+.bg-color1{
+   /* background color of sheets */
+   /* change the color if you want */
+   background-color: rgb(252, 200, 205);
+}
+
+.bg-color2{
+   /* background color of sheets */
+   /* change the color if you want */
+   background-color: rgb(195, 194, 250);
+}
+
+.img-container{
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+img{
+   width: 65%;
+   height: 65%;
+   border-radius: 5px;
+   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+   animation: imgAnimation 7s linear infinite;
+   z-index: 1;
+}
+
+@keyframes imgAnimation{
+   0%{
+      transform: rotate(-2deg);
+   }
+   60%{
+      transform: rotate(5deg);
+   }
+   100%{
+      transform: rotate(-2deg);
+   }
+}
+
+
+#sakura_leaves{
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+}
